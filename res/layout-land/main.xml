@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+	<LinearLayout
+        android:id="@+id/AdContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#000000"
+        android:gravity="right"
+        android:orientation="vertical" >
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/SDLContainer"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent" >
+    </FrameLayout>
+
+    <com.google.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        android:layout_alignRight="@id/SDLContainer"
+        ads:adUnitId="a15304edba18917" >
+    </com.google.ads.AdView>
+
+    <Button
+        android:id="@+id/buttonCloseAd"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignRight="@id/adView"
+        android:layout_below="@id/adView"
+        android:background="#dddddd"
+        android:visibility="gone"
+        android:text="X" />
+
+</RelativeLayout>

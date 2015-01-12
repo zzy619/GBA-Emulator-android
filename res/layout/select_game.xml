@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/adsContainer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </FrameLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+	    <EditText
+	        android:id="@+id/editText1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:singleLine="true"
+	        android:visibility="visible"
+	        android:ems="10" >
+	
+	        
+	    </EditText>
+	    
+	    <Button
+	        android:id="@+id/Search"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Google"
+	        android:visibility="visible" />
+	    <Button
+	        android:id="@+id/ScanSDCard"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Scan SDCard"
+	        android:focusable="true"
+	        >
+	    </Button>
+	    
+    </LinearLayout>
+    
+	<ListView
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_weight="1"
+	    android:id="@+id/ListFiles" >
+	 	<requestFocus />
+	</ListView>
+</LinearLayout>

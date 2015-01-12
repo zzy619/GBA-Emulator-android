@@ -1,0 +1,7 @@
+obj/
+bin/
+*.apk
+gen/
+libs/armeabi/
+libs/armeabi-v7a/
+libs/x86/
