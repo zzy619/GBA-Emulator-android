@@ -433,7 +433,7 @@ void debuggerPrintEnum(Type *t, u32 value)
   for(i = 0; i < t->enumeration->count; i++) {
     EnumMember *m = (EnumMember *)&t->enumeration->members[i];
     if(value == m->value) {
-      printf(m->name);
+      printf("%s=", m->name);
       return;
     }
   }
@@ -1280,7 +1280,7 @@ void debuggerMemoryByte(int n, char **args)
   if(n == 2) {
     u32 addr = 0;
     sscanf(args[1], "%x", &addr);
-    for(int i = 0; i < 16; i++) {
+    for(int ii = 0; ii < 16; ii++) {
       int a = debuggerReadByte(addr);
       int b = debuggerReadByte(addr+1);
       int c = debuggerReadByte(addr+2);
@@ -1316,7 +1316,7 @@ void debuggerMemoryHalfWord(int n, char **args)
     u32 addr = 0;
     sscanf(args[1], "%x", &addr);
     addr = addr & 0xfffffffe;
-    for(int i = 0; i < 16; i++) {
+    for(int ii = 0; ii < 16; ii++) {
       int a = debuggerReadByte(addr);
       int b = debuggerReadByte(addr+1);
       int c = debuggerReadByte(addr+2);
@@ -1352,7 +1352,7 @@ void debuggerMemory(int n, char **args)
     u32 addr = 0;
     sscanf(args[1], "%x", &addr);
     addr = addr & 0xfffffffc;
-    for(int i = 0; i < 16; i++) {
+    for(int ii = 0; ii < 16; ii++) {
       int a = debuggerReadByte(addr);
       int b = debuggerReadByte(addr+1);
       int c = debuggerReadByte(addr+2);
@@ -1400,7 +1400,7 @@ void debuggerQuit(int, char **)
 void debuggerOutput(char *s, u32 addr)
 {
   if(s)
-    printf(s);
+    printf("%s",s);
   else {
     char c;
 
